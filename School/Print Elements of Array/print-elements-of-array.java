@@ -28,26 +28,6 @@ class GFG {
 
 // User function Template for Java
 
-// class Solution {
-//     //Just print the space seperated array elements
-//     void printArray(int arr[], int n) {
-//         //   code here
-        
-        
-//         for(int i=0; i<arr.length; i++){
-            
-//             System.out.print(arr[i]);
-            
-//              if (i < n - 1) {
-//                 System.out.print(" "); // Print a space if it's not the last element
-//             }
-//         }
-        
-//     }
-// }
-
-
-
 class Solution {
     // Just print the space-separated array elements
     void printArray(int arr[], int n) {
