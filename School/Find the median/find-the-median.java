@@ -39,7 +39,12 @@ class Solution {
         
         int n = v.length;
         
+        
+        /*This line checks if the number of elements in the array is even by checking
+        if the remainder (%) of the division of n by 2 is 0. If it's 0,
+        it means the number of elements is even. */
         if (n % 2 == 0) {
+            
             // If number of elements is even
             return (v[n / 2 - 1] + v[n / 2]) / 2;
             
