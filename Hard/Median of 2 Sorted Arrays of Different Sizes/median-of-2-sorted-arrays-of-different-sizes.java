@@ -81,6 +81,7 @@ class GFG {
         int i = 0, j = 0, k = 0;
 
         while (i < n && j < m) {
+            
             if (a[i] <= b[j]) {
                 mergedArray[k++] = a[i++];
             } else {
