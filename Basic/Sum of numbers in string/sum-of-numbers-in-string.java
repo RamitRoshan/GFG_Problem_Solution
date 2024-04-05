@@ -22,30 +22,11 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
 class Solution
 {
     //Function to calculate sum of all numbers present in a string.
     public static long findSum(String str)
     {
-        // your code here
-       // String tempSum = "0";
-        // int sum = 0;
-        
-        // for(int i=0; i<str.length(); i++){
-            
-        //     //used for getting current each character 
-        //     char ch = str.charAt(i);
-            
-        //     if(Character.isDigit(ch)){
-                
-        //         sum = sum + Character.getNumericValue(ch);
-        //     }
-        // }
-        
-        // return  sum;
-        
           String tempSum = "0";
               int sum = 0;
               for (int i = 0; i < str.length(); i++) {
@@ -65,3 +46,5 @@ class Solution
     }
     
 }
+
+//TC- O(n)
