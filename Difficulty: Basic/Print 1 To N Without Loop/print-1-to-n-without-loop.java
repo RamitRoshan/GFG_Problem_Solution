@@ -47,14 +47,14 @@ class Solution
     
   public void printNos(int N)
     {
-        //Your code here
-        
+        //base condition
         if(N == 0){
             return;
         }
+        
         printNos(N-1);
         
-        System.out.print(N + " ");
+        System.out.print(N+ " ");
     }
 }
 
