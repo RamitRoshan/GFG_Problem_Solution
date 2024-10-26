@@ -19,6 +19,7 @@ public class Main {
                 System.out.print(arr[i] + " ");
             }
             System.out.println();
+            System.out.println("~");
         }
     }
 }
@@ -27,18 +28,25 @@ public class Main {
 
 class Solution {
     public void reverseArray(int arr[]) {
-        // Two-pointer approach to reverse the array in place
-        int start = 0, end = arr.length - 1;
-
-        while (start < end) {
-            // Swap the elements
+        // code here
+        
+        int start = 0;
+        int end = arr.length-1;
+        
+        while(start< end){
+            
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
-
-            // Move the pointers
-            start++;
-            end--;
+            
+             start++;
+             end--;
+            
         }
+        
+        
     }
 }
+
+
+
