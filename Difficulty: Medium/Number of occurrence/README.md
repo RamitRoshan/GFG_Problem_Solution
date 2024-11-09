@@ -1,6 +1,6 @@
-<h2><a href="https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1">Number of occurrence</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 12pt;">Given a&nbsp;<strong>sorted&nbsp;</strong>array, <strong>arr&nbsp;</strong>and a number&nbsp;<strong>target</strong>, you need to find the number of occurrences of<strong>&nbsp;target</strong>&nbsp;in&nbsp;<strong>arr</strong>.&nbsp;</span></p>
+<h2><a href="https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=number-of-occurrence">Number of occurrence</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 12pt;">Given a&nbsp;<strong>sorted&nbsp;</strong>array, <strong>arr&nbsp;</strong>and a number&nbsp;<strong>target</strong>, you need to find the number of occurrences of<strong>&nbsp;target</strong>&nbsp;in&nbsp;<strong>arr</strong>.&nbsp;</span></p>
 <p><span style="font-size: 12pt;"><strong>Examples :</strong></span></p>
-<pre><span style="font-size: 12pt;"><strong>Input: </strong> arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2
+<pre><span style="font-size: 12pt;"><strong>Input: </strong>arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> target = 2 occurs 4 times in the given array so the output is 4.</span></pre>
 <pre><span style="font-size: 12pt;"><strong>Input:</strong> arr[] = [1, 1, 2, 2, 2, 2, 3], target = 4
