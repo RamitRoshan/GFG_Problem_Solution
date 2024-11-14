@@ -29,35 +29,53 @@ System.out.println("~");
 
 
 // User function Template for Java
+
 class Solution {
     public int findKRotation(List<Integer> arr) {
+        // Code here
+        
         int start = 0;
-        int end = arr.size() - 1;
-
-        // If the array is already sorted, return 0 (no rotation)
-        if (arr.get(start) <= arr.get(end)) {
-            return 0;
-        }
-
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            // Check if mid is the smallest element
-            if (mid < end && arr.get(mid) > arr.get(mid + 1)) {
-                return mid + 1;
+        int end = arr.size()-1;
+        
+        int ans = Integer.MAX_VALUE;
+        
+        int index = -1;
+        
+        while(start<=end){
+            
+            int mid = start + (end-start)/2;
+            
+            if(arr.get(start)<=arr.get(end)){
+                if(arr.get(start) < ans){
+                    index = start;
+                    ans = arr.get(start);
+                }
+                break;
             }
-            if (mid > start && arr.get(mid) < arr.get(mid - 1)) {
-                return mid;
-            }
-
-            // Decide which side to search
+            //if left part is sorted:
             if (arr.get(start) <= arr.get(mid)) {
-                start = mid + 1; // Move to the right half
-            } else {
-                end = mid - 1; // Move to the left half
-            }
-        }
+                // keep the minimum:
+                if (arr.get(start) < ans) {
+                    index = start;
+                    ans = arr.get(start);
+                }
 
-        return 0; // Default case if no rotation found
+                // Eliminate left half:
+                start = mid + 1;
+                
+            } else { //if right part is sorted:
+
+                // keep the minimum:
+                if (arr.get(mid) < ans) {
+                    index = mid;
+                    ans = arr.get(mid);
+                }
+
+                // Eliminate right half:
+                end = mid - 1;
+            }
+
+        }
+        return index;
     }
 }
