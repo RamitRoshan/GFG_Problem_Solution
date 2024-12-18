@@ -27,11 +27,10 @@ class Solution {
         // code here
         
         //base condition
-        if(N == 0){
+        if(N==0){
             return;
         }
-        
-        System.out.print("GFG" + " ");
+        System.out.print("GFG"+ " ");
         printGfg(N-1);
     }
 }
