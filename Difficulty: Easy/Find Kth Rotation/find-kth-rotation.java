@@ -27,7 +27,7 @@ class Solution {
            // if right side is sorted
             else{
 
-                if (arr[mid] < min) {   // ✅ should check arr[mid], not arr[start]
+                if (arr[mid] < min) {   // ✅ should check arr[mid], not arr[start]]]
                     min = arr[mid];
                     index = mid;
                 }
