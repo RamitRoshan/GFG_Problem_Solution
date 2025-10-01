@@ -1,81 +1,41 @@
-//{ Driver Code Starts
-// Initial Template for Java
-
-import java.io.*;
-import java.util.*;
-
-class GFG {
-    // Driver code
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        int t = Integer.parseInt(sc.nextLine());
-        while (t-- > 0) {
-            List<Integer> arr = new ArrayList<>();
-            String input1 = sc.nextLine();
-            Scanner ss1 = new Scanner(input1);
-            while (ss1.hasNextInt()) {
-                arr.add(ss1.nextInt());
-            }
-            Solution ob = new Solution();
-            int res = ob.findKRotation(arr);
-            System.out.println(res);
-        
-System.out.println("~");
-}
-    }
-}
-
-// } Driver Code Ends
-
-
-// User function Template for Java
-
 class Solution {
-    public int findKRotation(List<Integer> arr) {
+    public int findKRotation(int arr[]) {
         // Code here
         
         int start = 0;
-        int end = arr.size()-1;
-        
-        int ans = Integer.MAX_VALUE;
-        
+        int end = arr.length-1;
+
+        int min = Integer.MAX_VALUE;
         int index = -1;
-        
-        while(start<=end){
-            
+
+        while(start <= end){
             int mid = start + (end-start)/2;
-            
-            if(arr.get(start)<=arr.get(end)){
-                if(arr.get(start) < ans){
-                    index = start;
-                    ans = arr.get(start);
-                }
-                break;
-            }
-            //if left part is sorted:
-            if (arr.get(start) <= arr.get(mid)) {
-                // keep the minimum:
-                if (arr.get(start) < ans) {
-                    index = start;
-                    ans = arr.get(start);
-                }
 
-                // Eliminate left half:
-                start = mid + 1;
+            //eleminate either the left half or right half..
+ 
+           // if left side is sorted
+            if(arr[start] <= arr[mid]){
                 
-            } else { //if right part is sorted:
-
-                // keep the minimum:
-                if (arr.get(mid) < ans) {
-                    index = mid;
-                    ans = arr.get(mid);
+                if(arr[start] < min){
+                    min = arr[start];
+                    index= start;
                 }
+                //eleminate the left half then move 
+                start = mid + 1;
 
-                // Eliminate right half:
+            }
+           // if right side is sorted
+            else{
+
+                if (arr[mid] < min) {   // ✅ should check arr[mid], not arr[start]
+                    min = arr[mid];
+                    index = mid;
+                }
+                //eleminate the right.
                 end = mid - 1;
             }
-
         }
+
         return index;
     }
 }
