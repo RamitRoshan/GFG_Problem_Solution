@@ -14,7 +14,13 @@ class Solution {
             base.add(arr[0]); // max
             return base;
         }
-
+        
+        /*
+        We want min & max of the array from index 0 to index
+        To do that, we first find min & max of the smaller problem:
+        That smaller problem is solved by the recursive call:
+           solve(arr, index - 1)
+        */
         // recursive call
         ArrayList<Integer> res = solve(arr, index - 1);
 
