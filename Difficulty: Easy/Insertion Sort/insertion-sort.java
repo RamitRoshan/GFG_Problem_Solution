@@ -1,61 +1,42 @@
-//{ Driver Code Starts
-// Initial Template for Java
-
-import java.io.*;
-import java.lang.*;
-import java.util.*;
-
-class Main {
-    public static void main(String args[]) throws IOException {
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(read.readLine());
-
-        while (t-- > 0) {
-
-            ArrayList<Integer> array1 = new ArrayList<Integer>();
-            String line = read.readLine();
-            String[] tokens = line.split(" ");
-            for (String token : tokens) {
-                array1.add(Integer.parseInt(token));
-            }
-            ArrayList<Integer> v = new ArrayList<Integer>();
-            int[] arr = new int[array1.size()];
-            int idx = 0;
-            for (int i : array1) arr[idx++] = i;
-
-            new Solution().insertionSort(arr);
-
-            for (int i = 0; i < arr.length; i++) System.out.print(arr[i] + " ");
-
-            // System.out.println();
-
-            System.out.println();
-
-            System.out.println("~");
-        }
-    }
-}
-
-// } Driver Code Ends
-
-
 class Solution {
     // Please change the array in-place
     public void insertionSort(int arr[]) {
         // code here
         
-        int n = arr.length;
-        for(int i=1; i<n; i++){
-            
-            int j=i;
-            
-            while(j>0 && arr[j]<arr[j-1]){
-                
-                int temp = arr[j];
-                arr[j] = arr[j-1];
-                arr[j-1]  = temp;
-                j--;
-            }
+        insertionSortRecursive(arr, arr.length);
+        
+    }
+    
+    public void insertionSortRecursive(int[] arr, int n){
+        
+        //base condition
+        if(n <= 1){
+            return;
         }
+        
+        // Sort first n-1 elements
+        insertionSortRecursive(arr, n-1);
+        
+        
+        //insert last element at its correct position
+        int last = arr[n-1];
+        
+        int j = n-2;
+        
+        while (j >= 0 && arr[j] > last)
+        {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = last;
+        
     }
 }
+
+
+
+/*
+Time complexity: O(n²)
+
+Space complexity: O(n) (due to recursion stack)
+*/
